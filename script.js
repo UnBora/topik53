@@ -433,7 +433,7 @@ if (exportPdfBtn) {
         <div id="exportGrid" style="display: grid; grid-template-columns: repeat(20, 1fr); gap: 0; border: 2px solid #000; margin-bottom: 20px;"></div>
 
         <div style="text-align: right; font-size: 14px;">
-          <strong>글자 수:</strong> ${currentCharCount} / 300자
+          <strong>글자 수:</strong> ${currentCharCount} / 400자
         </div>
       </div>
     `;
