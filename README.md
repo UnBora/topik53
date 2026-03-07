@@ -23,10 +23,9 @@ Professional web application for TOPIK II Question 53 writing practice.
 - Supports PNG, JPG, JPEG
 
 ✅ **Writing Grid (원고지)**
-- 35 rows × 20 columns = 700 boxes
-- 1 character per box
+- 20 rows × 20 columns = 400 boxes
 - Live character counter
-- Warning below 600 characters
+- Warning below 400 characters
 - First box empty rule
 - Keyboard navigation (arrows)
 
@@ -52,27 +51,3 @@ Professional web application for TOPIK II Question 53 writing practice.
 - `style.css` - Complete styling with dark mode
 - `script.js` - All functionality and logic
 
-## Usage
-
-1. Open `index.html` in a web browser
-2. Enter your name
-3. Click "새 주제 받기" to get a random topic (optional)
-4. Upload an image if needed
-5. Click on the grid and start typing
-6. Use arrow keys to navigate
-7. Export to PDF or PNG when done
-
-## Technologies
-
-- Pure HTML5
-- CSS3 with CSS Variables
-- Vanilla JavaScript (ES6+)
-- html2canvas for screenshots
-- jsPDF for PDF generation
-
-## Browser Support
-
-- Chrome/Edge (recommended)
-- Firefox
-- Safari
-- Any modern browser with ES6 support
