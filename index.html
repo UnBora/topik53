@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOPIK II 53번 쓰기 실전 연습</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-top">
+                <h1>TOPIK II 53번 쓰기 연습</h1>
+                <button class="dark-mode-toggle" id="darkModeToggle">🌙</button>
+            </div>
+            <div class="header-controls">
+                <div class="name-input-group">
+                    <label for="nameInput">이름:</label>
+                    <input type="text" id="nameInput" placeholder="이름을 입력하세요">
+                </div>
+                <div class="timer" id="timer">50:00</div>
+            </div>
+        </header>
+
+        <!-- Question Area -->
+        <section class="question-section">
+            <div class="question-header">
+                <h2>문제</h2>
+                <button class="new-topic-btn" id="newTopicBtn">새 주제 받기</button>
+            </div>
+            <div class="question-content">
+                <p class="instruction">다음 주제에 대해 200~300자로 자신의 의견을 쓰십시오.</p>
+                <p class="topic" id="topic">온라인 수업의 장단점</p>
+            </div>
+        </section>
+
+        <!-- Image Upload Section -->
+        <section class="image-section">
+            <div class="image-drop-area" id="imageDropArea">
+                <div class="drop-placeholder" id="dropPlaceholder">
+                    <p>📷 이미지를 드래그하거나 클릭하여 업로드하세요</p>
+                    <p class="file-types">(PNG, JPG, JPEG)</p>
+                </div>
+                <input type="file" id="imageInput" accept="image/png,image/jpeg,image/jpg" hidden>
+                <div class="image-preview-container" id="imagePreviewContainer" style="display: none;">
+                    <img id="imagePreview" src="" alt="업로드된 이미지">
+                    <div class="image-controls">
+                        <input type="range" id="imageResize" min="50" max="200" value="100">
+                        <button class="remove-image-btn" id="removeImageBtn">이미지 제거</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Writing Area -->
+        <section class="writing-input-section">
+            <div class="writing-header">
+                <h2>답안 작성</h2>
+                <div class="char-counter">
+                    <span id="charCount">0</span> / 700자
+                </div>
+            </div>
+            <textarea id="mainWritingArea" placeholder="여기에 답안을 작성하세요... (최대 700자)" maxlength="700"></textarea>
+            <div class="action-bar">
+                <button class="format-btn" id="formatBtn">원고지 배치 다시 적용</button>
+            </div>
+            <p class="live-format-note">입력한 텍스트는 바꾸지 않고, 아래 원고지 미리보기에 실시간으로 배치됩니다.</p>
+            <div class="format-status" id="formatStatus" aria-live="polite"></div>
+            <div class="warning" id="warning" style="display: none;">
+                ⚠️ 600자 이상 작성해주세요
+            </div>
+        </section>
+
+        <!-- Grid Preview Section (Hidden during writing, shown for export) -->
+        <section class="grid-preview-section" id="gridPreviewSection">
+            <h3>원고지 미리보기</h3>
+            <div class="grid-wrapper">
+                <div class="grid-container" id="gridContainer"></div>
+            </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section class="analytics-section">
+            <h3>작성 통계</h3>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">작성 시간:</span>
+                    <span class="stat-value" id="writingTime">0분 0초</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">글자 수:</span>
+                    <span class="stat-value" id="totalChars">0자</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">분당 글자 수:</span>
+                    <span class="stat-value" id="charsPerMin">0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Export Section -->
+        <section class="export-section">
+            <button class="export-btn pdf-btn" id="exportPdfBtn">PDF로 내보내기</button>
+            <button class="export-btn image-btn" id="exportImageBtn">이미지로 내보내기</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
