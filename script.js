@@ -497,7 +497,7 @@ if (exportImageBtn) {
         </div>
 
         <div style="margin-bottom: 30px; padding: 20px; background: #f5f5f5; border-left: 6px solid #3498db;">
-          <p style="margin-bottom: 10px; font-size: 16px; color: #666;">다음 주제에 대해 600~700자로 자신의 의견을 쓰십시오.</p>
+          <p style="margin-bottom: 10px; font-size: 16px; color: #666;">다음 주제에 대해 200~300자로 자신의 의견을 쓰십시오.</p>
           <p style="font-size: 24px; font-weight: bold;">${topic}</p>
         </div>
 
