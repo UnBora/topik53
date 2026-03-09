@@ -506,7 +506,7 @@ if (exportImageBtn) {
         <div id="exportGrid" style="display: grid; grid-template-columns: repeat(20, 1fr); gap: 0; border: 2px solid #000; margin-bottom: 30px;"></div>
 
         <div style="text-align: right; font-size: 20px;">
-          <strong>글자 수:</strong> ${currentCharCount} / 700자
+          <strong>글자 수:</strong> ${currentCharCount} / 400자
         </div>
       </div>
     `;
